@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>तक़दीर का बादशाह | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+            animation: bgMove 20s ease infinite;
+        }
+        
+        @keyframes bgMove {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            background: rgba(20, 20, 35, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Premium heading with glow */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 35px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        .games {
+            font-size: 1.15rem;
+            line-height: 2.2;
+            margin-bottom: 30px;
+            color: #d4d4d8;
+            font-weight: 500;
+        }
+        
+        .tagline {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 30px 0;
+            background: linear-gradient(90deg, #ff6b, #ff8787);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .features {
+            font-size: 1.1rem;
+            margin: 25px 0;
+            color: #4ecdc4;
+            font-weight: 600;
+        }
+        
+        .cta {
+            font-size: 1.4rem;
+            color: #ffd700;
+            margin-top: 30px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            animation: pulse 2s infinite;
+        }
+        
+        /* Premium timer */
+        .timer {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #ff4444, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 68, 0.8);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Premium 3D button with glass shine */
+        .btn {
+            position: relative;
+            display: inline-block;
+            margin-top: 25px;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #0a0a0f;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4),
+                        0 0 0 1px rgba(255, 215, 0, 0.5),
+                        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            overflow: hidden;
+            animation: float 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+        
+        /* Glass shine effect */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 0.7), transparent);
+            transform: rotate(25deg);
+            animation: shine 3s infinite;
+        }
+        
+        .btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.6),
+                        0 0 0 1px rgba(255, 215, 0, 0.7),
+                        inset 0 2px 0 rgba(255, 255, 0.5);
+        }
+        
+        /* Float animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Shine animation */
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            margin: 25px auto;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 35px 25px; }
+            h1 { font-size: 2.2rem; }
+            .games { font-size: 1rem; }
+            .tagline { font-size: 1.3rem; }
+            .timer { font-size: 2rem; }
+            .btn { padding: 15px 40px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="container">
+        <h1>तक़दीर का बादशाह</h1>
+        
+        <div class="games">
+            @कल्याण @श्री देवी @टाइम बाजार<br>
+            @मिलन गेम (नाइट)<br>
+            @राजधानी (नाइट) @मेन बाजार
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="tagline">🔥 बड़ा खेलो, बड़ा जीतो</div>
+        
+        <p style="color: #d4d4d8; margin: 15px 0;">🌟 ओरिजिनल के साथ जुड़ें – आपकी किस्मत का सितारा</p>
+        
+        <div class="features">
+            ✅ फास्ट रिज़ल्ट | लाइव सपोर्ट | 100% भरोसेमंद
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="cta">⏰ सीमित समय के लिए एक्सेस</div>
+        
+        <!-- 15 second timer -->
+        <div class="timer" id="countdown">15</div>
+        
+        <a href="https://t.me/+VduOEZvZ2TE5NTdl" class="btn" id="joinBtn">JOIN FREE TELEGRAM</a>
+        
+        <p style="margin-top: 25px; font-size: 0.85rem; color: #71717a;">
+            18+ केवल | जिम्मेदारी से जुड़ें
+        </p>
+    </div>
+
+    <script>
+        // 15 second countdown + auto redirect
+        let timeLeft = 15;
+        const timerEl = document.getElementById('countdown');
+        const telegramLink = 'https://t.me/+VduOEZvZ2TE5NTdl';
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerEl.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerEl.textContent = 'Joining...';
+                timerEl.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+                timerEl.style.webkitBackgroundClip = 'text';
+                timerEl.style.webkitTextFillColor = 'transparent';
+                setTimeout(() => {
+                    window.location.href = telegramLink;
+                }, 500);
+            }
+        }, 1000);
+        
+        // Button click bhi kaam karega
+        document.getElementById('joinBtn').addEventListener('click', function(e) {
+            clearInterval(countdown);
+        });
+    </script>
+</body>
+</html>
